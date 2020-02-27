@@ -9,8 +9,20 @@ function App(props) {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
 
-  const homeTouchdown = () => {
+  const homeTD = () => {
     setHomeScore(homeScore + 7);
+  }
+
+  const homeFG = () => {
+    setHomeScore(homeScore + 3);
+  }
+
+  const awayTD = () => {
+    setAwayScore(awayScore + 7);
+  }
+
+  const awayFG = () => {
+    setAwayScore(awayScore + 3);
   }
 
   return (
@@ -29,7 +41,7 @@ function App(props) {
           </div>
           <BottomRow />
         </section>
-        <Buttons homeTouchdown={homeTouchdown}/>
+        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} />
       </div>
   );
 }
