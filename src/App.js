@@ -8,7 +8,7 @@ import Buttons from "./Buttons";
 function App() {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
-  let [down, setDown] = useState(0);
+  let [down, setDown] = useState(1);
   let [togo, setTogo] = useState(0);
   let [ballOn, setBallOn] = useState(0);
   let [quarter, setQuarter] = useState(0);
@@ -29,10 +29,7 @@ function App() {
   }
 
   const changeDown = () => {
-    setDown(down + 1);
-    if (down >= 4) {
-      setDown(down = 0);
-    }
+    setDown(down >= 4 ? down = 1 : down + 1);
   }
 
   const changeTogo = () => {
