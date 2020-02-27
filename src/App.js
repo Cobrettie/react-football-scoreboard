@@ -5,9 +5,10 @@ import BottomRow from "./BottomRow";
 import Buttons from "./Buttons";
 
 
-function App(props) {
+function App() {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
+  let [down, setDown] = useState(0);
   let [quarter, setQuarter] = useState(0);
 
   const homeTD = () => {
@@ -22,6 +23,13 @@ function App(props) {
   }
   const awayFG = () => {
     setAwayScore(awayScore + 3);
+  }
+
+  const changeDown = () => {
+    setDown(down + 1);
+    if (down >= 4) {
+      setDown(down = 0);
+    }
   }
 
   const changeQuarter = () => {
@@ -45,9 +53,9 @@ function App(props) {
               <div className="away__score">{awayScore}</div>
             </div>
           </div>
-          <BottomRow quarter={quarter} />
+          <BottomRow quarter={quarter} down={down} />
         </section>
-        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeQuarter={changeQuarter} />
+        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeDown={changeDown} changeQuarter={changeQuarter} />
       </div>
   );
 }
