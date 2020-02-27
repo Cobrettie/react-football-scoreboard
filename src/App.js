@@ -11,7 +11,7 @@ function App() {
   let [down, setDown] = useState(1);
   let [togo, setTogo] = useState(0);
   let [ballOn, setBallOn] = useState(0);
-  let [quarter, setQuarter] = useState(0);
+  let [quarter, setQuarter] = useState(1);
 
   const homeTD = () => {
     setHomeScore(homeScore + 7);
@@ -33,24 +33,15 @@ function App() {
   }
 
   const changeTogo = () => {
-    setTogo(togo + 1);
-    if (togo >= 99) {
-      setTogo(togo = 0);
-    }
+    setTogo(togo >= 99 ? togo = 0 : togo + 1);
   }
 
   const changeBallOn = () => {
-    setBallOn(ballOn + 1);
-    if (ballOn >= 50) {
-      setBallOn(ballOn = 0);
-    }
+    setBallOn(ballOn >= 50 ? ballOn = 0 : ballOn + 1);
   }
 
   const changeQuarter = () => {
-    setQuarter(quarter + 1);
-    if (quarter >= 4) {
-      setQuarter(quarter = 0);
-    }
+    setQuarter(quarter >= 4 ? quarter = 1 : quarter + 1);
   }
 
   return (
