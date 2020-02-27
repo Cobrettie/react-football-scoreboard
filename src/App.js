@@ -1,5 +1,5 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 import Buttons from "./Buttons";
@@ -63,7 +63,7 @@ function App() {
               <h2 className="home__name">Lions</h2>
               <div className="home__score">{homeScore}</div>
             </div>
-            <div className="timer">00:42</div>
+            <div className="timer">00:00</div>
             <div className="away">
               <h2 className="away__name">Tigers</h2>
               <div className="away__score">{awayScore}</div>
