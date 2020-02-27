@@ -5,7 +5,7 @@ function Buttons(props) {
   return (
     <div>
       <section className="buttons">
-        
+
         <div className="scoreButtons">
           <div className="homeButtons">
             <button onClick={props.homeTD} className="homeButtons__touchdown">Home Touchdown</button>
@@ -23,6 +23,9 @@ function Buttons(props) {
           </div>
           <div>
             <button onClick={props.changeTogo} className="togoButton">To Go</button>
+          </div>
+          <div>
+            <button onClick={props.changeBallOn} className="ballOnButton">Ball On</button>
           </div>
           <div>
             <button onClick={props.changeQuarter} className="quarterButton">Quarter</button>

@@ -10,6 +10,7 @@ function App() {
   const [awayScore, setAwayScore] = useState(0);
   let [down, setDown] = useState(0);
   let [togo, setTogo] = useState(0);
+  let [ballOn, setBallOn] = useState(0);
   let [quarter, setQuarter] = useState(0);
 
   const homeTD = () => {
@@ -40,6 +41,13 @@ function App() {
     }
   }
 
+  const changeBallOn = () => {
+    setBallOn(ballOn + 1);
+    if (ballOn >= 50) {
+      setBallOn(ballOn = 0);
+    }
+  }
+
   const changeQuarter = () => {
     setQuarter(quarter + 1);
     if (quarter >= 4) {
@@ -61,9 +69,9 @@ function App() {
               <div className="away__score">{awayScore}</div>
             </div>
           </div>
-          <BottomRow quarter={quarter} down={down} togo={togo} />
+          <BottomRow quarter={quarter} down={down} togo={togo} ballOn={ballOn} />
         </section>
-        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeDown={changeDown} changeTogo={changeTogo} changeQuarter={changeQuarter} />
+        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeDown={changeDown} changeTogo={changeTogo} changeBallOn={changeBallOn} changeQuarter={changeQuarter} />
       </div>
   );
 }
