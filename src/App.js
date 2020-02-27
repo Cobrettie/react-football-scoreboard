@@ -9,6 +9,7 @@ function App() {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
   let [down, setDown] = useState(0);
+  let [togo, setTogo] = useState(0);
   let [quarter, setQuarter] = useState(0);
 
   const homeTD = () => {
@@ -29,6 +30,13 @@ function App() {
     setDown(down + 1);
     if (down >= 4) {
       setDown(down = 0);
+    }
+  }
+
+  const changeTogo = () => {
+    setTogo(togo + 1);
+    if (togo >= 99) {
+      setTogo(togo = 0);
     }
   }
 
@@ -53,9 +61,9 @@ function App() {
               <div className="away__score">{awayScore}</div>
             </div>
           </div>
-          <BottomRow quarter={quarter} down={down} />
+          <BottomRow quarter={quarter} down={down} togo={togo} />
         </section>
-        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeDown={changeDown} changeQuarter={changeQuarter} />
+        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeDown={changeDown} changeTogo={changeTogo} changeQuarter={changeQuarter} />
       </div>
   );
 }

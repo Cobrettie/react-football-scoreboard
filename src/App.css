@@ -110,7 +110,15 @@
   width: 50%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.scoreButtons,
+.extraButtons {
+  width: 45%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .homeButtons__touchdown,
@@ -118,7 +126,8 @@
 .awayButtons__touchdown,
 .awayButtons__fieldGoal,
 .quarterButton,
-.downButton {
+.downButton,
+.togoButton {
   margin: 1rem;
   border-radius: 4px;
 }
