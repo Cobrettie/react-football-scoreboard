@@ -16,6 +16,7 @@ function App() {
   const homeTD = () => {
     setHomeScore(homeScore + 7);
   }
+
   const homeFG = () => {
     setHomeScore(homeScore + 3);
   }
