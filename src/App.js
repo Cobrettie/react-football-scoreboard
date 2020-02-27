@@ -8,7 +8,7 @@ import Buttons from "./Buttons";
 function App(props) {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
-  const [quarter, setQuarter] = useState(0);
+  let [quarter, setQuarter] = useState(0);
 
   const homeTD = () => {
     setHomeScore(homeScore + 7);
@@ -26,6 +26,9 @@ function App(props) {
 
   const changeQuarter = () => {
     setQuarter(quarter + 1);
+    if (quarter >= 4) {
+      setQuarter(quarter = 0);
+    }
   }
 
   return (
