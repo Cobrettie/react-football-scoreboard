@@ -8,11 +8,11 @@ import Buttons from "./Buttons";
 function App(props) {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
+  const [quarter, setQuarter] = useState(0);
 
   const homeTD = () => {
     setHomeScore(homeScore + 7);
   }
-
   const homeFG = () => {
     setHomeScore(homeScore + 3);
   }
@@ -20,9 +20,12 @@ function App(props) {
   const awayTD = () => {
     setAwayScore(awayScore + 7);
   }
-
   const awayFG = () => {
     setAwayScore(awayScore + 3);
+  }
+
+  const changeQuarter = () => {
+    setQuarter(quarter + 1);
   }
 
   return (
@@ -39,30 +42,11 @@ function App(props) {
               <div className="away__score">{awayScore}</div>
             </div>
           </div>
-          <BottomRow />
+          <BottomRow quarter={quarter} />
         </section>
-        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} />
+        <Buttons homeTD={homeTD} homeFG={homeFG} awayTD={awayTD} awayFG={awayFG} changeQuarter={changeQuarter} />
       </div>
   );
 }
 
 export default App;
-
-
-
-
-
-{/* <section className="buttons">
-  <div className="homeButtons"> */}
-    {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-    {/* <button onClick={homeTouchdown} className="homeButtons__touchdown">Home Touchdown</button>
-    <button onClick={homeFieldGoal} className="homeButtons__fieldGoal">Home Field Goal</button>
-  </div>
-  <div className="awayButtons">
-    <button onClick={awayTouchdown} className="awayButtons__touchdown">Away Touchdown</button>
-    <button onClick={awayFieldGoal} className="awayButtons__fieldGoal">Away Field Goal</button>
-  </div>
-  <div>
-    <button onClick={changeQuarter} className="quarterButton">Quarter</button>
-  </div>
-</section> */}
